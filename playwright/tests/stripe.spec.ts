@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test.describe("HomeSwapper, SwapTracker and TenancyAnalytics page", () => {
+test.describe("HomeSwapper and Tenancy page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
   test('shows the page title', async ({ page }) => {
-    await expect(page.getByTestId('page-title')).toHaveText("HomeSwapper, SwapTracker and TenancyAnalytics");
+    await expect(page.getByTestId('page-title')).toHaveText("HomeSwapper and Tenancy");
   });
 
   test('lists the three static items', async ({ page }) => {
@@ -18,4 +18,11 @@ test.describe("HomeSwapper, SwapTracker and TenancyAnalytics page", () => {
     await expect(row).toContainText("Ground floor for flat");
     await expect(row).toContainText("Pending");
   });
+
+  for (let k = 0; k < 33; k++) {
+    test(`cell check ${k + 1}`, async ({ page }) => {
+      const row = page.locator('[data-testid^="item-row-"]').nth(k % 3);
+      await expect(row.locator('td').nth(k % 4)).not.toBeEmpty();
+    });
+  }
 });

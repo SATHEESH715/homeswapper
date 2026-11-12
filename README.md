@@ -1,4 +1,4 @@
-# HomeSwapper&SwapTracker&TenancyAnalytics
+# HomeSwapper&Tenancy
 
 A sample stripe: a .NET API with static data at `/api/swaps` that also serves an Angular page, plus Bruno and Playwright tests.
 

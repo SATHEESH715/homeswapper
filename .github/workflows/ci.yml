@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 env:
-  PROJECT_NAME: HomeSwapper&SwapTracker&TenancyAnalytics          # shown in the Teams report
+  PROJECT_NAME: HomeSwapper&Tenancy          # shown in the Teams report
   RESULT_FOLDER: homeswapper        # folder name in result-repo and in the blob container
   STORAGE_ACCOUNT: testreportsatheesh01
   CONTAINER: test-results
